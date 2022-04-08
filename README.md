@@ -1,4 +1,4 @@
-# ASIST 2020
+# Multi-timescale 
 Repository containing scripts to process physiological data collected as a
 part of ASIST ToMCAT project where participants perform search and rescue in a
 simulated Minecraft environment.
