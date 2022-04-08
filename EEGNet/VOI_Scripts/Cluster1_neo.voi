@@ -1,0 +1,26 @@
+
+FileVersion:                4
+
+ReferenceSpace:             MNI
+
+OriginalVMRResolutionX:     1
+OriginalVMRResolutionY:     1
+OriginalVMRResolutionZ:     1
+OriginalVMROffsetX:         0
+OriginalVMROffsetY:         0
+OriginalVMROffsetZ:         0
+OriginalVMRFramingCubeDim:  256
+
+LeftRightConvention:        1
+
+SubjectVOINamingConvention: <VOI>_<SUBJ>
+
+
+NrOfVOIs:					1
+
+NameOfVOI:  Cluster1
+ColorOfVOI: 177 151 175
+
+NrOfVoxels: 139995
+
+NrOfVOIVTCs: 0
