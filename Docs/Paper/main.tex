@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage[natbib]{biblatex}
-\addbibresource{references.bib}
+\addbibresource{Multime_References.bib}
 \usepackage[dvipsnames]{xcolor} % colors
 \usepackage[%
 colorlinks,
@@ -23,6 +23,35 @@ urlcolor=Blue
 \setlength{\parskip}{1em}
 \begin{document}
 \onehalfspacing
+
+\begin{titlepage}
+\begin{center}
+    \Large{
+    \textbf{Prediction of Behavior in Minecraft Simulated Search and 
+    Rescue Scenario Using Multi-timescale Features}}
+    \vspace{0.5cm}
+    
+    Chinmai Basavaraj, Adarsh Pyarelal, Evan C Carter 
+    
+    \Large{
+    \vspace{0.9cm}
+    \textbf{Abstract}}
+
+\end{center}
+
+We incorporate multi-timescale features extracted from participant’s behavioral
+and physiological data to predict and model participants behavior in a search and 
+rescue scenario. We hypothesize that, the use of features extracted over multiple
+timescales will substantially enhances behavior prediction compared to 
+methods that do not utilize multi-timescale features. We test our hypothesis in 
+an urban search and rescue (SAR) mission simulated in a virtual Minecraft based 
+testbed that is being designed as a part of DARPA’s ASIST 
+(Artificial Social Intelligence for Successful Teams) program. The ASIST program aims
+to design intelligent AI agents that demonstrate the capacity to understand 
+and model human cognitive states, and serve as effective teammates in the SAR mission.
+\end{titlepage}
+
+
 \section*{Introduction}
 
 We incorporate multi-timescale features extracted from participant’s behavioral
@@ -44,7 +73,8 @@ There are a number of examples in the literature where models that incorporate
 features evaluated over multiple timescales are shown to perform better than 
 models that tend to ignore them. 
 Prior research work has demonstrated that Use of multi-timescale features has resulted
-in performance improvements. For example, Takeda et al. \citet{takeda_multi-timescale_2018} incorporated
+in performance improvements. For example, Takeda et al. 
+\citet{takeda_multi-timescale_2018} incorporated
 multi-timescale feature extraction for automated speech recognition (ASR) from 
 raw speech signal and showed that a multi-timescale architecture reduced the 
 word error rate by 3\% compared to models that ignored multi-timescale features. 
@@ -55,9 +85,10 @@ in text classification tasks on four benchmark datasets. The use of multi-timesc
 features extracted from videos of drivers’ faces has also been shown to result in
 excellent performance on the task of characterizing the drivers’ level of 
 drowsiness \citep{massoz_multi-timescale_2018}.
-In the RoboCup rescue agent simulation competition (Queralta et al. 2020) 
-which involved a simulated
-Urban SAR scenario, Traichioiu and Visser (2015) employed a two-layered hierarchical
+In the RoboCup rescue agent simulation competition
+\citep{queralta_collaborative_2020} which involved a simulated
+Urban SAR scenario, Traichioiu and Visser \citet{tra_hierarchical_nodate}
+employed a two-layered hierarchical
 approach to model behavior and noticed an overall improvement in modeling 
 participant behavior. They applied a two-layered approach, with macro-level behavior
 responsible for strategic high-level decisions and micro-level behavior dealing with
