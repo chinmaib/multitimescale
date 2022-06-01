@@ -1,0 +1,162 @@
+\documentclass{article}
+
+\usepackage[natbib]{biblatex}
+\addbibresource{references.bib}
+\usepackage[dvipsnames]{xcolor} % colors
+\usepackage[%
+colorlinks,
+linkcolor=Blue,
+citecolor=Blue,
+urlcolor=Blue
+]{hyperref} 
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0.5cm}
+\usepackage{setspace}
+\title{Prediction of Behavior in Minecraft Simulated Search and Rescue Scenario Using Multi-timescale Features}
+\author{Chinmai Basavaraj}
+\setlength{\parskip}{1em}
+\begin{document}
+\onehalfspacing
+\section*{Introduction}
+
+We incorporate multi-timescale features extracted from participant’s behavioral
+and physiological data to predict and model participants behavior in a search and 
+rescue scenario. We hypothesize that, the use of features extracted over multiple
+timescales will substantially enhances behavior prediction compared to 
+methods that do not utilize multi-timescale features. We test our hypothesis in 
+an urban search and rescue (SAR) mission simulated in a virtual Minecraft based 
+testbed that is being designed as a part of DARPA’s ASIST 
+(Artificial Social Intelligence for Successful Teams) program. The ASIST program aims
+to design intelligent AI agents that demonstrate the capacity to understand 
+and model human cognitive states, and serve as effective teammates in the SAR mission.
+Basing the testbed on Minecraft allows us to gather data from a large pool of 
+participants (due to the popularity of the game) and build upon existing literature 
+that studies human-machine teaming in Minecraft-based testbeds such as Project 
+Malmo \citep{johnson_malmo_nodate}.
+
+There are a number of examples in the literature where models that incorporate 
+features evaluated over multiple timescales are shown to perform better than 
+models that tend to ignore them. 
+Prior research work has demonstrated that Use of multi-timescale features has resulted
+in performance improvements. For example, Takeda et al. \citet{takeda_multi-timescale_2018} incorporated
+multi-timescale feature extraction for automated speech recognition (ASR) from 
+raw speech signal and showed that a multi-timescale architecture reduced the 
+word error rate by 3\% compared to models that ignored multi-timescale features. 
+Liu et al. (2015) proposed a multi-timescale long short-term memory (MT-LSTM) 
+neural network for modeling very long documents as well as short sentences. 
+Their model outperformed other traditional neural network architectures 
+in text classification tasks on four benchmark datasets. The use of multi-timescale
+features extracted from videos of drivers’ faces has also been shown to result in
+excellent performance on the task of characterizing the drivers’ level of 
+drowsiness \citep{massoz_multi-timescale_2018}.
+In the RoboCup rescue agent simulation competition (Queralta et al. 2020) 
+which involved a simulated
+Urban SAR scenario, Traichioiu and Visser (2015) employed a two-layered hierarchical
+approach to model behavior and noticed an overall improvement in modeling 
+participant behavior. They applied a two-layered approach, with macro-level behavior
+responsible for strategic high-level decisions and micro-level behavior dealing with
+the local particularities and rapid responses to environmental changes in the SAR
+mission.
+
+\section*{Behavior in Minecraft SAR mission}
+We define behavior as a sequence of actions performed by the participants 
+involved in the Minecraft SAR mission. Teams of three qualified participants
+participated in a two and a hour session to complete an experiment in which 
+they search for victims and rescue them. Each participant was assigned a unique role
+and could perform role specific actions. The goal of the participants in the Minecraft
+SAR mission is to maximize their score by rescuing as many victims as possible in the
+allotted mission time. The three participants must coordinate and work as a team to
+complete the mission.
+
+Each experiment involved three parts. In the first part, the participants received
+training that introduced the rules of the game and provided some
+hands-on experience with the environment. In the second part, the participants 
+were engaged in two SAR missions with different map configurations. During the SAR
+missions, the participants could communicate with each other through audio. The
+participants also have access to a dynamic map and mission critical information that
+is provided right before the mission starts. The mission critical information is unique
+to the role and the participants are expected to communicate and share the information
+with their team mates. Each of the SAR missions was preceded by a two minute planning
+phase. The MALMO interface sent messages in JSON format that provided information about
+the player's actions and states in the Minecraft mission. The MALMO interface sent 
+a message about the player's state and actions approximately every 100 ms 
+(10 times per second).
+
+By examining the data collected from 14 teams of three participants each, we predefined
+a list of states and actions performed by the participants involved in the SAR mission.
+A sequence of actions of length k is defined as an ordered list of k successively chosen
+elements from the list of states and actions. Table \ref{table:1} shows a list of states
+and actions defined.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|c|c|}
+    \hline
+    \textbf{Behavior (actions)} & \textbf{Class Label} & \textbf{Alphabet} \\[1em]
+    \hline
+    Stationary & 0 & ST \\[0.5em]
+    Navigate (corridor) & 1 & NV \\[0.5em]
+    Search (room) & 2 & SR \\[0.5em]
+    Open door & 3 & OD \\[0.5em]
+    Pickup victim & 4 & PU \\[0.5em]
+    Transport victim & 5 & TV \\[0.5em]
+    Place victim & 6 & PL \\[0.5em]
+    Place marker & 7 & PM \\[0.5em]
+    Remove marker & 8 & RM \\[0.5em]
+    Select tool & 9 & TO \\[0.5em]
+    Role specific action & 10 & RA \\[0.5em]
+    \hline
+    \end{tabular}
+    \caption{Shows the list of Minecraft actions and associated labels}
+    \label{table:1}
+\end{table}
+
+\section*{Dataset}
+We obtained a total of 14 data points from the study 3 phase of ASISTs experiments.
+Each data point consisted data of 3 participants. Each participant was engaged in
+a training mission, Saturn A, and Saturn B mission.
+We extract sequence of labels for each participant by parsing the messages sent by 
+the MALMO interface.
+
+A plot to show distribution of labels over the course of SAR mission. Table 2 
+shows all the different topics from the message bus used to define the list 
+of states and actions.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|l|}
+    \hline
+    \textbf{Topics} \\[1em]
+    \hline
+    1 & observations/state \\[0.5em]
+    2 & observations/events/player/location \\[0.5em]
+    3 & observations/events/player/door \\[0.5em]
+    4 & observations/events/player/victim\_picked\_up \\[0.5em]
+    5 & observations/events/player/victim\_placed \\[0.5em]
+    6 & observations/events/player/marker\_placed \\[0.5em]
+    7 & observations/events/player/marker\_removed \\[0.5em]
+    8 & observations/events/player/tool\_used \\[0.5em]
+    9 & observations/events/player/itemequipped \\[0.5em]
+    10 & observations/events/player/triage \\[0.5em] 
+    11 & observations/events/player/rubble\_destroyed \\[0.5em]
+    12 & observations/events/player/signal \\[0.5em]
+    \hline
+    \end{tabular}
+    \caption{Shows the topics used from the message bus delivered by MALMO 
+    to define the list of states and actions}
+    \label{table:2}
+\end{table}
+
+
+\section*{Baseline Measure of Classification}
+For classification purposes, we consider a simple baseline where the model predicts
+the most common or the most probable label in the sequence.
+
+\printbibliography 
+\end{document}

@@ -7,4 +7,4 @@ JSON_Parser/temp/*
 # Ignore PAT key
 git_GE66_PAT
 
-
+*.log
