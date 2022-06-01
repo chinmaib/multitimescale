@@ -1,9 +1,10 @@
-# ignore ALL files in these directories under JSON_Parser
+# Ignore ALL files in these directories under JSON_Parser
+
 JSON_Parser/Data/
 JSON_Parser/Old/
 JSON_Parser/temp/
 
-#Ignore PAT key
-./git_GE66_PAT
+# Ignore PAT key
+git_GE66_PAT
 
 
