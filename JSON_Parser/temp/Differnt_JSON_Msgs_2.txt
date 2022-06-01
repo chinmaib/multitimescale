@@ -1,0 +1,491 @@
+1) TOPIC TRIAL - Trial Information
+
+{
+"topic": "trial", 
+"header": {"version": "0.6", "timestamp": "2022-01-20T22:52:21.0756Z", "message_type": "trial"}, 
+"data": {
+  "condition": "3", 
+  "group_number": "3", 
+  "date": "2022-01-20T22:52:21.0757Z", 
+  "notes": ["NA"], 
+  "experiment_date": "2022-01-20T22:52:21.0761Z", 
+  "map_name": "Saturn_2.6_3D", 
+  "study_number": "3", 
+  "intervention_agents": ["asi_cmu_ta1_atlas"], 
+  "subjects": ["P000421", " P000422", " P000423"], 
+  "name": "TM000075_T000451", 
+  "trial_number": "T000451", 
+  "experiment_author": "JC/MW", 
+  "experimenter": "JC/MW", 
+  "client_info": [
+  	{
+  	   "markerblocklegend": "", 
+  	   "callsign": "Red", 
+  	   "participant_id": "P000421", 
+  	   "playername": "RED_ASIST11", 
+  	   "staticmapversion": "", 
+  	   "unique_id": "P000421"
+  	 }, 
+  	 {
+  	   "markerblocklegend": "", 
+  	   "callsign": "Green", 
+  	   "participant_id": "P000422", 
+  	   "playername": "GREEN_ASIST11", 
+  	   "staticmapversion": "", 
+  	   "unique_id": "P000422"
+  	 }, 
+  	 {
+  	   "markerblocklegend": "", 
+  	   "callsign": "Blue", 
+  	   "participant_id": "P000423", 
+  	   "playername": "BLUE_ASIST1_", 
+  	   "staticmapversion": "", 
+  	   "unique_id": "P000423"
+  	   }
+  ],
+   
+  "testbed_version": "3.3.5-dev-c643fa8", "experiment_mission": "Saturn_A", "map_block_filename": "MapBlocks_SaturnA_2.3_xyz.csv", "experiment_name": "TM000075"}, "host": "361536598f50", "@timestamp": "2022-01-20T22:52:21.083Z", 
+  
+  
+  
+  NOTE:
+  @timestamp is when the message was received by the testbed
+  timestamp is when the message was produced.
+  
+  "msg": {
+  "timestamp": "2022-01-20T22:52:21.0757Z", 
+  "replay_parent_type": null, 
+  "source": "gui", 
+  "version": "0.1", 
+  "replay_parent_id": null, 
+  "sub_type": "start",	NOTE: IMPORTANT. 
+  "trial_id": "fc59fe00-ceed-4df0-95d4-7fdfe28c2d11", "replay_id": null, "experiment_id": "ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"}, "@version": "1"}
+
+
+
+2) MISSION START - Topic type - "observations/events/mission"
+
+{
+"topic":"observations/events/mission",
+"header":{"version":"1.1","timestamp":"2022-01-20T22:54:35.501Z","message_type":"event"},
+"data":{
+	"elapsed_milliseconds":4,
+	"mission":"Saturn_A",
+	"mission_state":"Start",
+	"mission_timer":"15 : 3"
+},
+	"host":"361536598f50",
+	"@timestamp":"2022-01-20T22:54:35.504Z",
+	"msg":{"timestamp":"2022-01-20T22:54:35.501Z",
+
+
+
+
+
+
+3) OBSERVATION EVENTS MISSION
+
+{
+"topic":"observations/events/mission",
+
+"header":{
+  "version":"1.1",
+  "timestamp":"2022-01-20T22:54:35.501Z",
+  "message_type":"event"
+  },
+"data":{
+  "elapsed_milliseconds":4,
+  "mission":"Saturn_A",
+  "mission_state":"Start",
+  "mission_timer":"15 : 3"
+  },
+}
+
+{
+"topic":"observations/events/mission",
+"header":{
+  "version":"1.1",
+  "timestamp":"2022-01-20T23:09:39.502Z",
+  "message_type":"event"
+  },
+"data":{
+  "elapsed_milliseconds":-1,
+  "mission":"Saturn_A",
+  "mission_state":"Stop",
+  "mission_timer":"Mission Timer not initialized."
+  },
+  
+  
+4) ROLE SELECTED
+  
+{
+  "topic":"observations/events/player/role_selected","header":{"version":"1.1","timestamp":"2022-01-20T22:53:28.804Z","message_type":"event"},
+  "data":{
+    "elapsed_milliseconds":-1,
+    "new_role":"Medical_Specialist",
+    "prev_role":"None",
+    "participant_id":"P000421",
+    "playername":"RED_ASIST11",
+    "mission_timer":"Mission Timer not initialized."
+    },
+  "host":"361536598f50","@timestamp":"2022-01-20T22:53:28.809Z","msg":{"timestamp":"2022-01-20T22:53:28.804Z","source":"simulator","version":"2.0","trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","sub_type":"Event:RoleSelected","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}
+  
+  
+5) OBSERVATION STATE
+
+  "topic":"observations/state","header":{"version":"1.1","timestamp":"2022-01-20T22:53:28.906Z","message_type":"observation"},
+  "data":{
+    "elapsed_milliseconds":-1,
+    "pitch":1.500001,
+    "world_time":1000,
+    "id":"9517563b-9885-341e-9e03-80a401a2f127",
+    "timestamp":"2022-01-20T22:53:28.906Z",
+    "total_time":45692026,
+    "y":60,
+    "life":20,
+    "playername":"RED_ASIST11",
+    "yaw":9.150013,
+    "x":-2151.051820606176,
+    "motion_y":0,
+    "observation_number":693,
+    "entity_type":"human",
+    "motion_x":-0.0316019379242789,
+    "motion_z":0.213788861864586,
+    "participant_id":"P000421",
+    "z":125.6873769366305,
+    "mission_timer":"Mission Timer not initialized."
+    },
+
+
+  OBSERVATION NUMBER 12774
+  
+  {"topic":"observations/state","header":{"version":"1.1","timestamp":"2022-01-20T23:00:34.752Z","message_type":"observation"},
+  "data":{
+    "elapsed_milliseconds":359254,
+    "pitch":13.350053,
+    "timestamp":"2022-01-20T23:00:34.752Z",
+    "total_time":45700543,
+    "playername":"RED_ASIST11",
+    "yaw":351.60266,
+    "x":-2089.503000640283,
+    "z":18.96435185016927,
+    "motion_y":0,
+    "observation_number":12774,
+    "entity_type":"human",
+    "motion_x":0.0562609469934614,
+    "motion_z":0.4276712721737148,
+    "participant_id":"P000421",
+    "mission_timer":"9 : 4"
+    },
+    
+    OBSERVATION_NUMBER 12771
+    NOTE: I am doing this test to measure how motion_x and motion_z are computed
+    Motion_y remains 0 unless I jump.
+     
+    {"topic":"observations/state","header":{"version":"1.1","timestamp":"2022-01-20T23:00:34.649Z","message_type":"observation"},
+    "data":{
+    "elapsed_milliseconds":359151,
+    "pitch":13.350053,
+    "timestamp":"2022-01-20T23:00:34.649Z",
+    "total_time":45700541,
+    "y":60,
+    "life":20,
+    "playername":"RED_ASIST11",
+    "yaw":351.60266,
+    "x":-2089.5592615872765,
+    "z":18.536680577995554,
+    "motion_y":0,
+    "observation_number":12771,
+    "entity_type":"human",
+    "motion_x":0.04025423532311834,
+    "motion_z":0.4290450273216919,
+    "participant_id":"P000421",
+
+    "mission_timer":"9 : 4"}
+    
+    
+6) EVENT ITEM EQUIPPED
+    
+    {
+    "topic":"observations/events/player/itemequipped",
+    "header":{"version":"1.1","timestamp":"2022-01-20T23:00:38.474Z","message_type":"event"},
+    "data":{
+    "elapsed_milliseconds":362976,
+    "participant_id":"P000421",
+    "equippeditemname":"asistmod:item_medical_kit",
+    "playername":"RED_ASIST11",
+    "mission_timer":"9 : 1"
+    }
+    
+    
+6) EVENT MARKER PLACED
+	{
+	"topic":"observations/events/player/marker_placed",
+	"header":{"version":"1.1","timestamp":"2022-01-20T22:55:35.389Z","message_type":"event"},
+	"data":{
+	"elapsed_milliseconds":59891,
+	"marker_x":-2117,
+	"marker_y":60,
+	"type":"green_criticalvictim",
+	"participant_id":"P000422",
+	"playername":"GREEN_ASIST11",
+	"marker_z":19,
+	"mission_timer":"14 : 4"},
+	
+	MARKER REMOVED IS ALSO VERY SIMILAR
+	
+	
+7) VICTIM_PICKED UP
+	{
+	"topic":"observations/events/player/victim_picked_up",
+	"header":{"version":"1.1","timestamp":"2022-01-20T22:56:02.589Z","message_type":"event"},
+	"data":{
+	  "elapsed_milliseconds":87091,
+	  "victim_x":-2132,
+	  "victim_z":13,
+	  "victim_id":13,
+	  "type":"victim_saved_c",
+	  "participant_id":"P000421",
+	  "victim_y":60,
+	  "playername":"RED_ASIST11",
+	  "mission_timer":"13 : 36"},
+	  }
+	  
+	  
+8) OBSESRVATIONS EVENTS PLAYER DOOR
+	{
+	"topic":"observations/events/player/door",
+	"Header":{
+"Version":"1.1",
+"timestamp":"2022-01-20T22:54:51.340Z",
+"message_type":"event"},
+	"data":{
+		"elapsed_milliseconds":15843,
+		"door_z":60,
+		"open":true,
+		"door_x":-2153,
+		"participant_id":"P000421",
+		"door_y":61,
+		"playername":"RED_ASIST11",
+		"mission_timer":"14 : 48"
+	},
+	"host":"361536598f50","@timestamp":"2022-01-20T22:54:51.348Z","msg":{"timestamp":"2022-01-20T22:54:51.340Z","source":"simulator","version":"0.5","trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","sub_type":"Event:Door","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}
+	  
+
+9) OBSERVATION EVENTS PLAYER LOCATION
+	{
+	"topic":"observations/events/player/location",
+"Header":{
+"Version":"1.1",
+"timestamp":"2022-01-20T22:54:51.790Z",
+"message_type":"event"},
+	"data":{
+		"elapsed_milliseconds":16292,
+		"connections":[{"connected_locations":["tacs","ew"],"id":"c_46_-11_49_-10"}],
+		"exited_locations":[{"name":"Entrance Walkway","id":"ew"}],
+		"corresponding_observation_number":3059,
+		"callsign":"Green",
+		"participant_id":"P000422",
+		"mission_timer":"14 : 47"
+	},
+	"host":"361536598f50","@timestamp":"2022-01-20T22:54:51.801Z","msg":{"timestamp":"2022-01-20T22:54:51.790Z","source":"IHMCLocationMonitorAgent","version":"3.0","sub_type":"Event:location","trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}
+
+10) MINECRAFT CHAT
+
+	{
+	"topic":"minecraft/chat",
+	"Header":{
+"Version":"1.1",
+"timestamp":"2022-01-20T22:55:13.742Z",
+"message_type":"chat"},
+	"data":
+	{
+		"elapsed_milliseconds":38246,
+		"sender":"Server",
+		"addressees":["P000422"],
+		"text":"{\"text\":\"Critical Victim Detected\",\"color\":\"green\"}",
+		"mission_timer":"14 : 25"
+	},
+	"host":"361536598f50",
+	"@timestamp":"2022-01-20T22:55:13.748Z",
+	"msg":{"timestamp":"2022-01-20T22:55:13.743Z",
+	"source":"simulator",
+	"version":"1.0",
+	"trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","sub_type":"Event:Chat","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}	
+	
+	
+11) OBSERVATION EVENTS SCOREBOARD
+
+{
+"topic":"observations/events/scoreboard",
+"header":{
+"version":"1.1",
+"timestamp":"2022-01-20T22:56:55.092Z",
+"Message_type":"observation"
+},
+"data":{
+"elapsed_milliseconds":139596,
+"scoreboard":
+{
+"GREEN_ASIST11":50,
+"RED_ASIST11":0,
+"TeamScore":50,
+"BLUE_ASIST1_":0
+},
+"Mission_timer":"12:44"
+},
+
+
+{
+"topic":"observations/events/scoreboard",
+"header":{
+"version":"1.1",
+"timestamp":"2022-01-20T23:07:07.139Z",
+"message_type":"observation"
+},
+"data":{
+"elapsed_milliseconds":751641,
+"scoreboard":{
+"GREEN_ASIST11":420,
+"RED_ASIST11":10,
+"TeamScore":430,
+"BLUE_ASIST1_":0
+},
+"mission_timer":"2 : 32"},
+
+{"topic":"observations/events/scoreboard","header":{"version":"1.1","timestamp":"2022-01-20T23:09:25.989Z","message_type":"observation"},"data":{"elapsed_milliseconds":890491,"scoreboard":{"GREEN_ASIST11":620,"RED_ASIST11":130,"TeamScore":760,"BLUE_ASIST1_":10},"mission_timer":"0 : 13"},
+
+
+
+
+
+
+
+
+
+
+12) OBSERVATIONS events player marker placed
+
+{
+"topic":"observations/events/player/marker_placed",
+"header":{
+"version":"1.1",
+"timestamp":"2022-01-20T22:55:21.341Z",
+"message_type":"event"
+},
+"data":{
+"elapsed_milliseconds":45844,
+"marker_x":-2122,
+"marker_y":60,
+"type":"green_criticalvictim",
+"participant_id":"P000422",
+"playername":"GREEN_ASIST11",
+"marker_z":17,
+"mission_timer":"14:18"
+},
+"host":"361536598f50","@timestamp":"2022-01-20T22:55:21.347Z","msg":{"timestamp":"2022-01-20T22:55:21.341Z","source":"simulator","version":"2.1","trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","sub_type":"Event:MarkerPlaced","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}
+
+Marker types:
+[
+abrasion,
+bonedamage,
+critical,
+regularvictim,
+criticalvictim,
+rubble,
+threat,
+wildcard,
+]
+[red_abrasion,red_bonedamage,red_critical,red_regularvictim,red_criticalvictim,red_rubble,red_threat,red_wildcard,green_abrasion,green_bonedamage,green_critical,green_regularvictim,green_criticalvictim,green_rubble,green_threat,green_wildcard,blue_abrasion,blue_bonedamage,blue_critical,blue_regularvictim,blue_criticalvictim,blue_rubble,blue_threat,blue_wildcard]     
+
+
+
+
+
+13) Observation events player triage
+
+{"topic":"observations/events/player/triage",
+"header":{"version":"1.1","timestamp":"2022-01-20T22:57:20.844Z","message_type":"event"},
+"data":{
+"elapsed_milliseconds":165346,
+"victim_x":-2111,
+"victim_z":16,
+"victim_id":16,
+"triage_state":"IN_PROGRESS",
+"type":"victim_c",
+"participant_id":"P000421",
+"victim_y":60,
+"playername":"RED_ASIST11",
+"mission_timer":"12 : 18"
+},
+
+{"topic":"observations/events/player/triage",
+"header":{"version":"1.1","timestamp":"2022-01-20T22:57:23.538Z","message_type":"event"},
+"data":{
+"elapsed_milliseconds":168040,
+"victim_x":-2111,"victim_z":16,
+"victim_id":16,
+"triage_state":"SUCCESSFUL",
+"type":"victim_c",
+"participant_id":"P000421",
+"victim_y":60,
+"playername":"RED_ASIST11",
+"mission_timer":"12 : 15"
+},
+
+14) Observations events player victim picked up
+
+{"topic":"observations/events/player/victim_picked_up",
+"header":{"version":"1.1","timestamp":"2022-01-20T22:57:24.389Z","message_type":"event"},
+"data":{
+"Elapsed_milliseconds":168891,
+"Victim_x":-2111,
+"Victim_z":16,
+"Victim_id":16,
+"Type":"victim_saved_c",
+"participant_id":"P000421",
+"Victim_y":60,
+"playername":"RED_ASIST11",
+"mission_timer":"12 : 15"},
+"host":"361536598f50","@timestamp":"2022-01-20T22:57:24.392Z","msg":{"timestamp":"2022-01-20T22:57:24.389Z","source":"simulator","version":"2.1","trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","sub_type":"Event:VictimPickedUp","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}
+
+Victim type identifier in data.type [victim_a,victim_b,victim_c,victim_saved_a,victim_saved_b,victim_saved_c]
+
+
+15) Observation events victim placed
+
+{"topic":"observations/events/player/victim_placed",
+"header":{"version":"1.1","timestamp":"2022-01-20T22:57:31.940Z","message_type":"event"},
+"data":{
+"elapsed_milliseconds":176442,
+"victim_x":-2117,
+"victim_z":14,
+"victim_id":16,
+"type":"victim_saved_c",
+"participant_id":"P000421",
+"victim_y":60,
+"playername":"RED_ASIST11",
+"mission_timer":"12 : 7"},
+
+"host":"361536598f50","@timestamp":"2022-01-20T22:57:31.944Z","msg":{"timestamp":"2022-01-20T22:57:31.940Z","source":"simulator","version":"2.1","trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","sub_type":"Event:VictimPlaced","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}
+
+
+16) Observations events player tool used
+
+{"topic":"observations/events/player/tool_used",
+"header":{"version":"1.1","timestamp":"2022-01-20T22:57:42.538Z","message_type":"event"},
+"data":{
+"elapsed_milliseconds":187040,
+"durability":4985,
+"target_block_x":-2114,
+"target_block_z":13,
+"target_block_type":"asistmod:block_victim_saved_b",
+"count":1,
+"playername":"RED_ASIST11",
+"tool_type":"MEDKIT",
+"participant_id":"P000421",
+"target_block_y":60,
+"mission_timer":"11 : 56"},
+
+"host":"361536598f50","@timestamp":"2022-01-20T22:57:42.539Z","msg":{"timestamp":"2022-01-20T22:57:42.538Z","source":"simulator","version":"1.1","trial_id":"fc59fe00-ceed-4df0-95d4-7fdfe28c2d11","sub_type":"Event:ToolUsed","experiment_id":"ded6a1d8-b010-4790-9bfd-3fd3292c7f1b"},"@version":"1"}
+

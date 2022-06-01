@@ -1,0 +1,1300 @@
+Mission Start:  2022-03-28T23:01:58.340Z
+Mission Stop :  2022-03-28T23:19:02.342Z
+Total P1 player messages:  9033
+Time: 14 : 58 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 58 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 58 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 57 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 57 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 57 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 57 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 57 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+Time: 14 : 57 	Location: {'name': 'Staging Area', 'id': 'sga'}
+
+
+
+
+Time: 14 : 56 	Location: {'name': 'Entrance Walkway', 'id': 'ew'}
+
+
+
+
+Time: 14 : 46 	Location: {'name': 'South Zone C  Critical', 'id': 'tacs'}
+
+
+
+
+Time: 14 : 45 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 14 : 44 	Location: {'name': 'Main Corridor East', 'id': 'mce'}
+
+
+
+
+Time: 14 : 40 	Location: {'name': 'H1 Sundollars Coffee', 'id': 'H1'}
+
+
+
+
+Time: 14 : 38 	Location: {'name': 'H1A Sundollars Coffee Kitchen', 'id': 'H1A'}
+
+
+
+
+Time: 14 : 19 	Location: {'name': 'H1 Sundollars Coffee', 'id': 'H1'}
+
+
+
+
+Time: 14 : 17 	Location: {'name': 'Main Corridor East', 'id': 'mce'}
+
+
+
+
+Time: 14 : 14 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 14 : 13 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 14 : 12 	Location: {'name': 'Main Corridor East', 'id': 'mce'}
+
+
+
+
+Time: 14 : 4 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 13 : 55 	Location: {'name': 'I4 Storage G', 'id': 'I4'}
+
+
+
+
+Time: 13 : 53 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 13 : 50 	Location: {'name': 'I4 Storage G', 'id': 'I4'}
+
+
+
+
+Time: 13 : 43 	Location: {'name': 'I4A Storage H', 'id': 'I4A'}
+
+
+
+
+Time: 13 : 28 	Location: {'name': 'I4 Storage G', 'id': 'I4'}
+
+
+
+
+Time: 13 : 26 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 13 : 23 	Location: {'name': 'I4 Storage G', 'id': 'I4'}
+
+
+
+
+Time: 13 : 20 	Location: {'name': 'I4A Storage H', 'id': 'I4A'}
+
+
+
+
+Time: 13 : 8 	Location: {'name': 'I4 Storage G', 'id': 'I4'}
+
+
+
+
+Time: 13 : 6 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 13 : 0 	Location: {'name': 'J4 Storage L', 'id': 'J4'}
+
+
+
+
+Time: 12 : 46 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 12 : 42 	Location: {'name': 'J4 Storage L', 'id': 'J4'}
+
+
+
+
+Time: 12 : 29 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 12 : 20 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 12 : 19 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 12 : 19 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+
+
+Time: 12 : 18 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 12 : 17 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+
+
+Time: 12 : 16 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 12 : 12 	Location: {'name': 'Storage Corridor West', 'id': 'scw'}
+
+
+
+
+Time: 12 : 9 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 12 : 5 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 12 : 5 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+
+
+Time: 12 : 4 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 12 : 1 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 12 : 1 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 12 : 0 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 12 : 0 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 11 : 57 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 11 : 57 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+
+
+Time: 11 : 56 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 11 : 52 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 52 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 52 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 51 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 50 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+
+
+Time: 11 : 47 	Location: {'name': 'Storage Corridor East', 'id': 'sce'}
+
+
+
+
+Time: 11 : 45 	Location: {'name': 'M3 Storage V', 'id': 'M3'}
+
+
+
+
+Time: 11 : 34 	Location: {'name': 'Storage Corridor East', 'id': 'sce'}
+
+
+
+
+Time: 11 : 31 	Location: {'name': 'M3 Storage V', 'id': 'M3'}
+
+
+
+
+Time: 11 : 18 	Location: {'name': 'Storage Corridor East', 'id': 'sce'}
+
+
+
+
+Time: 11 : 15 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 11 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 11 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 10 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 9 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 9 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 9 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 11 : 9 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+
+
+Time: 11 : 2 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+
+
+Time: 11 : 1 	Location: {'name': 'Storage Corridor East', 'id': 'sce'}
+
+
+
+
+Time: 11 : 0 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 10 : 56 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 10 : 56 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 10 : 55 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+Time: 10 : 55 	Location: {'name': 'Storage Corridor North', 'id': 'scn'}
+
+
+
+
+Time: 10 : 54 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 10 : 49 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 10 : 49 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 10 : 49 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 10 : 23 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+Time: 10 : 23 	Location: {'name': 'K4 Storage P', 'id': 'K4'}
+
+
+
+
+Time: 10 : 23 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 10 : 16 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+Time: 10 : 16 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+Time: 10 : 16 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+Time: 9 : 55 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+
+
+Time: 9 : 54 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 9 : 50 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+Time: 9 : 50 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+Time: 9 : 50 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+Time: 9 : 40 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+Time: 9 : 40 	Location: {'name': 'K2 Storage N', 'id': 'K2'}
+
+
+
+
+Time: 9 : 39 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 9 : 31 	Location: {'name': 'L1 Storage Q', 'id': 'L1'}
+
+
+
+
+Time: 9 : 27 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 9 : 25 	Location: {'name': 'L1 Storage Q', 'id': 'L1'}
+
+
+
+
+Time: 9 : 20 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 9 : 18 	Location: {'name': 'L1 Storage Q', 'id': 'L1'}
+
+
+
+
+Time: 8 : 53 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 8 : 42 	Location: {'name': 'L1 Storage Q', 'id': 'L1'}
+
+
+
+
+Time: 8 : 37 	Location: {'name': 'Storage Corridor Center', 'id': 'scc'}
+
+
+
+
+Time: 8 : 36 	Location: {'name': 'Main Corridor East', 'id': 'mce'}
+
+
+
+
+Time: 8 : 31 	Location: {'name': 'Main Corridor East', 'id': 'mce'}
+
+
+
+
+Time: 8 : 20 	Location: {'name': 'Storage Corridor East', 'id': 'sce'}
+
+
+
+
+Time: 8 : 17 	Location: {'name': 'M1 Storage T', 'id': 'M1'}
+
+
+
+
+Time: 8 : 11 	Location: {'name': 'Storage Corridor East', 'id': 'sce'}
+
+
+
+
+Time: 8 : 10 	Location: {'name': 'M1 Storage T', 'id': 'M1'}
+
+
+
+
+Time: 7 : 55 	Location: {'name': 'Storage Corridor East', 'id': 'sce'}
+
+
+
+
+Time: 7 : 52 	Location: {'name': 'Main Corridor East', 'id': 'mce'}
+
+
+
+
+Time: 7 : 35 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 7 : 33 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 7 : 33 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 7 : 32 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 7 : 32 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 7 : 28 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 21 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 21 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 18 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 18 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 17 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 17 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 16 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 15 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 15 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 7 : 14 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 14 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 14 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 11 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 11 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 9 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 9 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 6 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 6 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 4 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 4 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 7 : 4 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 7 : 3 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 59 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 59 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 59 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 59 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 58 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 57 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 57 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 57 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 55 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 55 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 55 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 6 : 55 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 6 : 50 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 6 : 33 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 6 : 29 	Location: {'name': 'G3 Table 12', 'id': 'G3'}
+
+
+
+
+Time: 6 : 25 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 20 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 17 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 17 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 16 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 16 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 15 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 15 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 11 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 6 : 11 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 6 : 7 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 59 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 59 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 56 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 56 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 56 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 55 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 55 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 51 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 51 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 48 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 48 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 44 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 44 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 5 : 43 	Location: {'name': 'Limping Lamb Corridor North', 'id': 'llcn'}
+
+
+
+
+Time: 5 : 42 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 41 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 41 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 38 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 38 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 35 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 35 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 35 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 35 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 35 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 28 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 28 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 27 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 27 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 26 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 26 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 23 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 23 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 5 : 18 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 5 : 15 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 13 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 10 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 7 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 7 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 7 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 7 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 7 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 6 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 6 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 6 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 6 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 5 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 4 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 4 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 3 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 3 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 2 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 2 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 0 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 5 : 0 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 59 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 4 : 58 	Location: {'name': 'E3 Table 3', 'id': 'E3'}
+
+
+
+
+Time: 4 : 52 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 51 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 51 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 51 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 51 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 51 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 48 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 48 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 45 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 45 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 4 : 44 	Location: {'name': 'Limping Lamb Corridor North', 'id': 'llcn'}
+
+
+
+
+Time: 4 : 42 	Location: {'name': 'Limping Lamb Corridor North', 'id': 'llcn'}
+
+
+
+
+Time: 4 : 39 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 38 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+Time: 4 : 38 	Location: {'name': 'The Limping Lamb Chophouse', 'id': 'llc'}
+
+
+
+
+Time: 4 : 32 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 4 : 28 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 4 : 28 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 4 : 28 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+Time: 4 : 28 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 4 : 27 	Location: {'name': 'Main Corridor West', 'id': 'mcw'}
+
+
+
+
+Time: 4 : 25 	Location: {'name': 'Cubicle Area', 'id': 'ca'}
+
+
+
+
+Time: 4 : 24 	Location: {'name': 'D1 Office 101', 'id': 'D1'}
+
+
+
+
+Time: 4 : 14 	Location: {'name': 'Cubicle Area', 'id': 'ca'}
+
+
+
+
+Time: 4 : 9 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+Time: 4 : 9 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+Time: 4 : 9 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+Time: 4 : 1 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+
+
+Time: 4 : 0 	Location: {'name': 'Cubicle Area', 'id': 'ca'}
+
+
+
+
+Time: 3 : 56 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+Time: 3 : 56 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+Time: 3 : 55 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+Time: 3 : 43 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+Time: 3 : 43 	Location: {'name': 'D3 Data Storage', 'id': 'D3'}
+
+
+
+
+Time: 3 : 42 	Location: {'name': 'Cubicle Area', 'id': 'ca'}
+
+
+
+
+Time: 3 : 40 	Location: {'name': 'Main Corridor West', 'id': 'mcw'}
+
+
+
+
+Time: 3 : 36 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 3 : 34 	Location: {'name': 'South Zone C  Critical', 'id': 'tacs'}
+
+
+
+
+Time: 3 : 32 	Location: {'name': 'Lobby', 'id': 'el'}
+
+
+
+
+Time: 3 : 30 	Location: {'name': 'Main Corridor West', 'id': 'mcw'}
+
+
+
+
+Time: 3 : 23 	Location: {'name': 'Conference Corridor East', 'id': 'cce'}
+
+
+
+
+Time: 3 : 21 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 20 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 20 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 20 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 16 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 16 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 15 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 14 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 11 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 11 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 10 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 3 : 10 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 26 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 26 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 25 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 24 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 24 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 24 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 21 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+Time: 2 : 21 	Location: {'name': 'C2 Room 109', 'id': 'C2'}
+
+
+
+
+Time: 2 : 20 	Location: {'name': 'Conference Corridor East', 'id': 'cce'}
+
+
+
+
+Time: 2 : 18 	Location: {'name': 'Main Corridor West', 'id': 'mcw'}
+
+
+
+
+Time: 2 : 16 	Location: {'name': 'Main Corridor West', 'id': 'mcw'}
+
+
+
+
+Time: 2 : 15 	Location: {'name': 'Conference Corridor East', 'id': 'cce'}
+
+
+
+
+Time: 2 : 9 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 2 : 8 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 2 : 8 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 2 : 7 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 2 : 7 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 1 : 51 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 1 : 51 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 1 : 51 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 1 : 50 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+Time: 1 : 50 	Location: {'name': 'C4 Room 107', 'id': 'C4'}
+
+
+
+
+Time: 1 : 49 	Location: {'name': 'Conference Corridor East', 'id': 'cce'}
+
+
+
+
+Time: 1 : 46 	Location: {'name': 'Conference Room Corridor', 'id': 'crc'}
+
+
+
+
+Time: 1 : 44 	Location: {'name': 'B7 Herbalife Conference Room', 'id': 'B7'}
+
+
+Time: 1 : 40 	Location: {'name': 'B7 Herbalife Conference Room', 'id': 'B7'}
+
+
+Time: 1 : 40 	Location: {'name': 'B7 Herbalife Conference Room', 'id': 'B7'}
+
+
+
+
+Time: 1 : 39 	Location: {'name': 'Conference Room Corridor', 'id': 'crc'}
+
+
+
+
+Time: 1 : 39 	Location: {'name': 'Conference Corridor East', 'id': 'cce'}
+
+
+
+
+Time: 1 : 35 	Location: {'name': 'Conference Corridor North', 'id': 'ccn'}
+
+
+
+
+Time: 1 : 33 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 32 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 32 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 25 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 25 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 21 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 21 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 13 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+Time: 1 : 13 	Location: {'name': 'B8 Room 101', 'id': 'B8'}
+
+
+
+
+Time: 1 : 12 	Location: {'name': 'Conference Corridor North', 'id': 'ccn'}
+
+
+
+
+Time: 1 : 6 	Location: {'name': 'B7 Herbalife Conference Room', 'id': 'B7'}
+
+
+Time: 1 : 5 	Location: {'name': 'B7 Herbalife Conference Room', 'id': 'B7'}
+
+
+Time: 1 : 5 	Location: {'name': 'B7 Herbalife Conference Room', 'id': 'B7'}
+
+
+
+
+Time: 1 : 5 	Location: {'name': 'Conference Corridor North', 'id': 'ccn'}
+
+
+
+
+Time: 1 : 4 	Location: {'name': 'Conference Corridor West', 'id': 'ccw'}
+
+
+
+
+Time: 1 : 2 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 1 : 0 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 1 : 0 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 1 : 0 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 1 : 0 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 59 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 59 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 59 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 58 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 58 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 56 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 56 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 54 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 41 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 40 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 39 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 39 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 39 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 38 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+Time: 0 : 38 	Location: {'name': "A4 King Chris's Office", 'id': 'A4'}
+
+
+
+
+Time: 0 : 37 	Location: {'name': 'Conference Corridor West', 'id': 'ccw'}
+
+
+
+
+Time: 0 : 27 	Location: {'name': 'A2 Open Break Area', 'id': 'A2'}
+
+
+
+
+Time: 0 : 3 	Location: {'name': 'Conference Corridor West', 'id': 'ccw'}
+
+
+
+
+Time: 0 : 2 	Location: {'name': 'Main Corridor West', 'id': 'mcw'}
+
+
