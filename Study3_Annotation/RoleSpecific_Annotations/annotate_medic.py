@@ -1,8 +1,13 @@
 """
-Script: annotate_study3.py
+Script: annotate_medic.py
 Author: Chinmaib
-Description: Parsing messages from the Minecraft messages bus which are in JSON format.
+
+Description: Parsing messages from the Minecraft messages bus which are in JSON format and
+annotating basic set of actions performed by the medic in the Minecraft SAR mission.
 """
+import sys
+# Adding parent folder to import search.
+sys.path.append("..")
 
 from typing import Any, Dict, List, Set, TextIO
 import os
@@ -21,7 +26,7 @@ import matplotlib.pyplot as plt
 from utils import *
 
 # Declare location of files and folders.
-data_dir="/home/chinmai/src/ASIST/Scripts/JSON_Parser"
+data_dir="/home/chinmai/src/ASIST/Study3/"
 team="TM000093"
 #meta_file="Trial-T000451_Team-TM000075.metadata" 
 
@@ -29,7 +34,7 @@ meta_file='Trial-T000486_Team-TM000093.metadata'
 
 def main():
     # Open metadata file for reading.
-    meta_file_path = os.path.join(data_dir,meta_file)
+    meta_file_path = os.path.join(data_dir,team,meta_file)
     meta_fd = open(meta_file_path,'r')
 
     #################### PARSE METADATA JSON OBJECTS ##########################
@@ -196,14 +201,17 @@ def main():
     #################### GENERATE SEQUENCE ##########################
     #NOTE: Can be merged with above section
     # All players start from staging area.
+
+    # FLAGS to check before generating sequence.
+    # These flags can be added to the player object.
     player_loc  = "hallway"
     triage      = "inactive"
     transport   = "inactive"
-    label_sequence = []
-
+    label = []
+    label_class = []
     for msg in p1_msgs:
-        label = []
         # UPDATE player location.
+        # Location message only updates player location. NO LABEL.
         if (msg["topic"] == "observations/events/player/location"):
             if "locations" in msg["data"]:
                 if msg["data"]["locations"][0]["id"] in rooms:
@@ -212,60 +220,122 @@ def main():
                     player_loc = "hallway"
                 elif  msg["data"]["locations"][0]["id"] in treatmentAreas:
                     player_loc = "treatment"
+            continue
 
-        # Observations state indicates us about the players position and velocity
-        if (msg["topic"].lower() == "observations/state"):
-            # Player is stationary
-            if msg["data"]["motion_x"] == 0 and msg["data"]["motion_z"] == 0:
-                continue
-                #print ("ST,0,",msg["data"]["mission_timer"])
-            else:
-                if player_loc == "hallway" or player_loc =="treatment":
-                        continue
-                        #print ("NV,1,",msg["data"]["mission_timer"])
-                elif player_loc == "room":
-                        continue
-                    #print ("SR,2,",msg["data"]["mission_timer"])
-                # There is a location called UNKOWN, we will ignore for now.
-        
-        # Door - LABEL
-        if (msg["topic"].lower() == "observations/events/player/door"):
-                if msg["data"]["open"] == True:
-                        print ('Door opened at :',msg["data"]["mission_timer"])
-                                # Open door label is 3
-                                
+        # Update player state.
         # Triage - ACTION
-        if msg["topics"].lower() == "observations/events/player/triage":
+        if msg["topic"].lower() == "observations/events/player/triage":
             if triage == 'active':
                 if msg["data"]["triage_state"] == "SUCCESSFUL":
                     triage = 'inactive'
                 elif msg["data"]["triage_state"] == "UNSUCCESSFUL":
                     triage = 'inactive'
-                        
             else:
                 if msg["data"]["triage_state"] == "IN_PROGRESS":
-                    traige = "active"
-     
-        # Victim pickup - ACTION
-        # NOTE: There is a scenario where victim gets evacuated.
-        if msg["topics"].lower() == "observations/events/player/victim_picked_up":
-            transport = "active"
-            
-        # Victim dropped - ACTION
-        if msg["topics"].lower() == "observations/events/player/victim_placed":
-            transport = "inactive"
+                    triage = "active"
+                    print ('Triage Active at time',msg["data"]["mission_timer"])
+            continue
 
+        # Update if player is transporting victim or not.
+        # Transport - ACTION
+        # NOTE: There is a scenario where victim gets evacuated.
+        if msg["topic"].lower() == "observations/events/player/victim_picked_up":
+            if transport == "active":
+                print ("Error: Player already carrying victim. Exiting sequence generation.")
+                exit(1)
+            else:
+                transport = "active"
+            continue
+
+        if msg["topic"].lower() == "observations/events/player/victim_placed":
+            if transport == "inactive":
+                print ("Error: Player NOT carrying victim. Exiting sequence generation.")
+                exit(1)
+            else:
+                transport = "inactive"
+            continue
+
+        # LABEL - State
+        # Observations state indicates us about the players position and velocity
+        if (msg["topic"].lower() == "observations/state"):
+            # Player is stationary
+            if msg["data"]["motion_x"] == 0 and msg["data"]["motion_z"] == 0:
+                # Is the player performing a ROLE specific action
+                if (triage == "active"):
+                    label.append(('RA',msg["data"]["mission_timer"]))
+                    label_class.append(10)
+                    continue
+                else:   # Player not doing anything
+                    label.append(('ST',msg["data"]["mission_timer"]))
+                    label_class.append(0)
+                    continue
+                #print ("ST,0,",msg["data"]["mission_timer"])
+
+            # Player is moving
+            else:  
+                
+                if (triage == "active"):
+                    label.append(('RA',msg["data"]["mission_timer"]))
+                    label_class.append(10)
+                    continue
+                # Check if player is moving a victim
+                if transport == "active":
+                    label.append(('TV',msg["data"]["mission_timer"]))
+                    label_class.append(5)
+                    continue
+                else:
+                    if player_loc == "hallway" or player_loc =="treatment":
+                        label.append(('NV',msg["data"]["mission_timer"]))
+                        label_class.append(1)
+                        continue
+                        #print ("NV,1,",msg["data"]["mission_timer"])
+                    elif player_loc == "room":
+                        label.append(('SR',msg["data"]["mission_timer"]))
+                        label_class.append(2)
+                        continue
+
+                    #print ("SR,2,",msg["data"]["mission_timer"])
+                    # There is a location called UNKOWN, we will ignore for now.
+        
+        # Door - LABEL
+        if (msg["topic"].lower() == "observations/events/player/door"):
+            if msg["data"]["open"] == True:
+                label.append(('OD',msg["data"]["mission_timer"]))
+                label_class.append(3)
+                continue
+                #print ('Door opened at :',msg["data"]["mission_timer"])
+                # Open door label is 3
+                                
         # Marker placed. - LABEL
-        if msg["topics"].lower() == "observations/events/player/marker_placed":
+        if msg["topic"].lower() == "observations/events/player/marker_placed":
+            label.append(('PM',msg["data"]["mission_timer"]))
+            label_class.append(7)
+            continue
 
         # Marker removed. - LABEL
-        if msg["topics"].lower() == "observations/events/player/marker_removed":
+        if msg["topic"].lower() == "observations/events/player/marker_removed":
+            label.append(('RM',msg["data"]["mission_timer"]))
+            label_class.append(8)
+            continue
 
-        # Tool Used, or selecting tool - LABEL
-        if msg["topics"].lower() == "observations/events/player/tool_used":
-        
+        # Item Selected and Tool Used.
+        if msg["topic"].lower() == "observations/events/player/tool_used":
+            label.append(('TU',msg["data"]["mission_timer"]))
+            label_class.append(9)
+            continue
+
+        if msg["topic"].lower() == "observations/events/player/itemequipped":
+            label.append(('IE',msg["data"]["mission_timer"]))
+            label_class.append(11)
+            continue
+
+    # Coming here mean label sequence has been generated.
+    # Validating label sequence.
+    print (len(label))
+
+    for lab in label:
+        print(lab)
 
     meta_fd.close()
-
 
 main()
