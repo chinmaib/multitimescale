@@ -11,3 +11,6 @@ JSON_Parser/Data
 *.log
 *.out
 *.pyc
+
+# Ignore test python scripts
+*test.py
