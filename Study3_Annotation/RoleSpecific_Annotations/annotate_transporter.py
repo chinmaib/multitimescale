@@ -15,8 +15,9 @@ import numpy as np
 from Parser.Map import Map
 from Parser.Trial import Trial, Position
 from Common.Constants import Constants
+from Common.Player import*
+
 import matplotlib.pyplot as plt
-from sample_class import *
 from utils import *
 
 # Declare location of files and folders.
@@ -244,7 +245,7 @@ def main():
             else:
                 if msg["data"]["triage_state"] == "IN_PROGRESS":
                     traige = "active"
-        
+     
         # Victim pickup - ACTION
         # NOTE: There is a scenario where victim gets evacuated.
         if msg["topics"].lower() == "observations/events/player/victim_picked_up":
@@ -262,7 +263,7 @@ def main():
 
         # Tool Used, or selecting tool - LABEL
         if msg["topics"].lower() == "observations/events/player/tool_used":
-
+        
 
     meta_fd.close()
 
