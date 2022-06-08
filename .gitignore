@@ -10,4 +10,4 @@ JSON_Parser/Data
 *.metadata
 *.log
 *.out
-
+*.pyc
