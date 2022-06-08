@@ -1,7 +1,13 @@
-# Ignore ALL files in these directories under JSON_Parser
+# Ignore ALL files in these directories 
+# Any folder named Data, temp
 Data/*
 Old/*
 temp/*
+Output/*
 JSON_Parser/Data
+
+# Ignore any metadata, log, and output files.
 *.metadata
 *.log
+*.out
+

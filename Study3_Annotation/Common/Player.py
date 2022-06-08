@@ -38,11 +38,19 @@ class Player:
     events= []
     messages=[]
     tools = []
-
+    
+    # Actions during mission
+    transport   = ''
+    role_action = ''
+    location    = ''
+    
     def __init__(self,pname: str, player_id: str, callsign: str):
         self.pid   = player_id
         self.name  = pname
         self.color = callsign
+        self.transport   = 'inactive'
+        self.location    = 'hallway'
+        self.role_action = 'inactive'
 
     def __repr__(self):
         var = "Player ID:"+self.pid+"\nPlayer name:"+self.name+ \
