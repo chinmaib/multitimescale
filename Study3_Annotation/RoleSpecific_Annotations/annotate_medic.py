@@ -263,7 +263,7 @@ def main():
                 # Is the player performing a ROLE specific action
                 if (triage == "active"):
                     label.append(('RA',msg["data"]["mission_timer"]))
-                    label_class.append(10)
+                    label_class.append(8)
                     continue
                 else:   # Player not doing anything
                     label.append(('ST',msg["data"]["mission_timer"]))
@@ -276,12 +276,12 @@ def main():
                 
                 if (triage == "active"):
                     label.append(('RA',msg["data"]["mission_timer"]))
-                    label_class.append(10)
+                    label_class.append(8)
                     continue
                 # Check if player is moving a victim
                 if transport == "active":
                     label.append(('TV',msg["data"]["mission_timer"]))
-                    label_class.append(5)
+                    label_class.append(4)
                     continue
                 else:
                     if player_loc == "hallway" or player_loc =="treatment":
@@ -309,27 +309,28 @@ def main():
         # Marker placed. - LABEL
         if msg["topic"].lower() == "observations/events/player/marker_placed":
             label.append(('PM',msg["data"]["mission_timer"]))
-            label_class.append(7)
+            label_class.append(5)
             continue
 
         # Marker removed. - LABEL
         if msg["topic"].lower() == "observations/events/player/marker_removed":
             label.append(('RM',msg["data"]["mission_timer"]))
-            label_class.append(8)
+            label_class.append(6)
             continue
 
         # Item Selected and Tool Used.
         if msg["topic"].lower() == "observations/events/player/tool_used":
             label.append(('TU',msg["data"]["mission_timer"]))
-            label_class.append(9)
+            label_class.append(7)
             continue
 
         if msg["topic"].lower() == "observations/events/player/itemequipped":
             label.append(('IE',msg["data"]["mission_timer"]))
-            label_class.append(11)
+            label_class.append(9)
             continue
 
     # Coming here mean label sequence has been generated.
+    # Label list contains label(str) and mission time.
     # Validating label sequence.
     print (len(label))
 
