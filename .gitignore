@@ -11,6 +11,10 @@ JSON_Parser/Data
 *.log
 *.out
 *.pyc
+*.swp
 
 # Ignore test python scripts
 *test.py
+
+# Ignore sequence files.
+*.seq
