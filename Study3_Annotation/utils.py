@@ -4,9 +4,7 @@ Defining a series of static methods
 from typing import Any, Dict, List, Set, TextIO
 import os
 import json
-from dateutil.parser import parse
 import numpy as np
-from Common.Constants import Constants
 
 USED_TOPICS = [
 #   "trial",
@@ -42,17 +40,6 @@ VICTIM_LIST_TOPIC = "ground_truth/mission/victims_list"
 RUBBLE_LIST_TOPIC = "ground_truth/mission/blockages_list"
 THREAT_PLATE_LIST_TOPIC = "ground_truth/mission/threatsign_list"
 VICTIM_SIGNAL_PLATE_LIST_TOPIC = "ground_truth/mission/freezeblock_list"
-
-def getRoleFromStringType(stringType: str) -> Constants.Role:
-    role = None
-    if "transport" in stringType:
-        role = Constants.Role.TRANSPORTER
-    elif "engineering" in stringType:
-        role = Constants.Role.ENGINEER
-    elif "medical" in stringType:
-        role = Constants.Role.MEDIC
-
-    return role
 
 def isMessageOf(message: json, type: str, subType: str):
     return message["header"]["message_type"].lower() == type.lower() and message["msg"][

@@ -1,5 +1,4 @@
 from enum import Enum
-from PyQt5.Qt import QFont, QSize
 
 
 class Constants:

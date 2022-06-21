@@ -23,16 +23,15 @@ import datetime
 
 import numpy as np
 from Parser.Map import Map
-from Parser.Trial import Trial, Position
-from Common.Constants import Constants
 from Common.Player import*
 
-import matplotlib.pyplot as plt
 from utils import *
 
 # Declare location of files and folders.
-data_dir="/home/chinmai/src/ASIST/Study3/"
-out_dir ="/home/chinmai/src/ASIST/Scripts/Study3_Annotation/Output"
+#data_dir="/home/chinmai/src/ASIST/Study3/"
+data_dir="/home/chinmaib/tomcat/HSR_noadvisor"
+#out_dir ="/home/chinmai/src/ASIST/Scripts/Study3_Annotation/Output"
+out_dir ="/home/chinmaib/tomcat/annotations"
 
 #team="TM000093"
 team  = sys.argv[1]
@@ -42,8 +41,11 @@ trial = sys.argv[2]
 def main():
     # Open metadata file for reading.
     global data_dir, out_dir, team, trial
-    meta_file = 'Trial-'+trial+'_Team-'+team+'.metadata'
-    meta_file_path = os.path.join(data_dir,team,meta_file)
+    meta_file = 'HSRData_TrialMessages_Trial-'+trial+'_Team-'+team+ \
+            '_Member-na_CondBtwn-none_CondWin-na_Vers-5.metadata'
+    #meta_file = 'Trial-'+trial+'_Team-'+team+'.metadata'
+    meta_file_path = os.path.join(data_dir,meta_file)
+    #meta_file_path = os.path.join(data_dir,team,meta_file)
     meta_fd = open(meta_file_path,'r')
 
     #################### PARSE METADATA JSON OBJECTS ##########################
@@ -201,7 +203,16 @@ def main():
     for msg in p1_msgs:
  
         # Extract mission time.
-        (mm,ss) = parse_mission_time(msg["data"]["mission_timer"])
+        #print (msg["topic"],msg["header"]["timestamp"])
+        if ("mission_timer" in msg["data"]):
+            if (msg["data"]["mission_timer"] == "Mission Timer not initialized."):
+                continue
+            else:
+                #print (msg["data"]["mission_timer"])
+                (mm,ss) = parse_mission_time(msg["data"]["mission_timer"])
+        else:
+            print(msg["topic"],"doesn't contain mission timer value.")
+            continue
          
         # UPDATE player location.
         # Location message only updates player location. NO LABEL.
