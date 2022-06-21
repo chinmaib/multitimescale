@@ -9,6 +9,11 @@ import sys
 # Adding parent folder to import search.
 sys.path.append("..")
 
+# As a command line argument we should pass, team and trial
+if (len(sys.argv) < 2):
+    print ('Usage: python3 annotate_medic.py <TM000XXX> <Trial000XXX>')
+    exit(0)
+
 from typing import Any, Dict, List, Set, TextIO
 import os
 import json
@@ -28,13 +33,16 @@ from utils import *
 # Declare location of files and folders.
 data_dir="/home/chinmai/src/ASIST/Study3/"
 out_dir ="/home/chinmai/src/ASIST/Scripts/Study3_Annotation/Output"
-team="TM000093"
-#meta_file="Trial-T000451_Team-TM000075.metadata" 
 
-meta_file='Trial-T000486_Team-TM000093.metadata'
+#team="TM000093"
+team  = sys.argv[1]
+trial = sys.argv[2]
+#meta_file="Trial-T000451_Team-TM000075.metadata" 
 
 def main():
     # Open metadata file for reading.
+    global data_dir, out_dir, team, trial
+    meta_file = 'Trial-'+trial+'_Team-'+team+'.metadata'
     meta_file_path = os.path.join(data_dir,team,meta_file)
     meta_fd = open(meta_file_path,'r')
 
@@ -80,32 +88,31 @@ def main():
                 elif jsonMessage["topic"] in USED_TOPICS:
                     messages.append(jsonMessage)
 
-    #trial._parseGroundTruthMessages(groundTruthMessagesMap)
     # Using the time stamp value in the header in the JSON file/messages, 
     # we sort the list of messages into a sorted list.
     sorted_messages = sorted(
         messages, key=lambda x: parse(x["header"]["timestamp"])
     )
 
-    playerIdToColor = {}
-    metadata = {}
-
     # Close meta file.
     meta_fd.close()
 
-    #################### EXTRACT PLAYER INFO ##########################
+    #################### EXTRACT PLAYER/TRIAL INFO ##########################
     # Player names, ID's, and matching colors.
     msg = trialMessage[0]
     # Client info field is a list of dictionary item with player information
+    trial_name = msg["data"]["name"]
+    trial_num  = msg["data"]["trial_number"]
     sub_info = msg["data"]["client_info"]
-    # Player class is defined in sample_class
-    P1 = Player(sub_info[0]["playername"],sub_info[0]["participant_id"], \
-            sub_info[0]["callsign"])
-    P2 = Player(sub_info[1]["playername"],sub_info[1]["participant_id"], \
-            sub_info[1]["callsign"])
-    P3 = Player(sub_info[2]["playername"],sub_info[2]["participant_id"], \
-            sub_info[2]["callsign"])
-    # P1 is Red
+
+    # Client info is a list of player information.
+    for i in range(0,3):        #3 players
+        if sub_info[i]["callsign"] == "Red":
+            P1 = Player(sub_info[i]["playername"],sub_info[i]["participant_id"], \
+                sub_info[i]["callsign"])
+            break
+
+    # P1 is Red, get only the medics information.
     # Define a counter.
     C = Counter()
     
@@ -114,8 +121,6 @@ def main():
     hallways = []
     treatmentAreas = []
     # PARSE MAP into rooms, hallways, and corridors.
-    # NOTE: For older versions, extract bounding boxes and using player coordinates,
-    # we will infer where they are in the MAP.
     # Rooms and areas are listed as list of places in the MAP JSON object.
     for location in groundTruthMessagesMap["map"]["data"]["semantic_map"]["locations"]:
     # List all location names and ID's separated by comma
@@ -130,7 +135,6 @@ def main():
                 treatmentAreas.append(location["id"])
                 #treatmentAreas.append((location["id"],location["name"]))
             #print(location["name"],',',location["id"],',',location["type"])
-    #NOTE: staging area to be placed under hallways and not rooms.
     #################### EXTRACT START STOP TIMES ##########################
 
     # Mission start time
@@ -158,22 +162,10 @@ def main():
 
     # Round off Start time
     mission_start_time = parse(missionStart)
-    # Rounding off the start time to the nearest microsecond.
-    start_microsec = mission_start_time.microsecond
-    delta = start_microsec%100000
-    mission_start_round = mission_start_time - datetime.timedelta(microseconds=delta)
 
     # Round off Stop time to next millisecond.
     mission_stop_time = parse(missionStop)
-    # Rounding off the start time to the nearest microsecond.
-    stop_microsec = mission_stop_time.microsecond
-    delta = 100000-(stop_microsec%100000)
-    mission_stop_round = mission_stop_time + datetime.timedelta(microseconds=delta)
-
-    t1 = mission_start_round
-    t2 = t1 + datetime.timedelta(seconds=1)
-
-    
+ 
     #################### EXTRACT PLAYER  MESSAGES ##########################
     #NOTE: Use a for loop here, for 3 players in player list.
     p1_msgs = []
@@ -195,12 +187,12 @@ def main():
     C.resetCount1()
 
     #################### GENERATE SEQUENCE ##########################
-    #NOTE: Can be merged with above section
     # All players start from staging area.
 
     # FLAGS to check before generating sequence.
     # These flags can be added to the player object.
-    player_loc  = "hallway"
+    # Player is first located in the staging area, which is considered a room.
+    player_loc  = "room"
     triage      = "inactive"
     transport   = "inactive"
     label = []
@@ -251,6 +243,7 @@ def main():
             else:
                 transport = "inactive"
             continue
+
         # Extract mission time.
         (mm,ss) = parse_mission_time(msg["data"]["mission_timer"])
 
@@ -279,7 +272,7 @@ def main():
                     label_class.append(8)
                     continue
                 # Check if player is moving a victim
-                if transport == "active":
+                elif transport == "active":
                     label.append(('TV',mm,ss))
                     label_class.append(4)
                     continue
@@ -331,9 +324,18 @@ def main():
 
     # Coming here mean label sequence has been generated.
     # Label list contains label(str), mission(mm), and seconds(ss).
+    # Write sequences to a file.
+    out_fname = team+'_'+trial_num+'_'+P1.pid+'_'+P1.name+'.seq'
+    out_file = os.path.join(out_dir,out_fname)
+    print (out_fname)
+    fw = open(out_file,'w')
+    for lab in label:
+        fw.write(lab[0]+'\n')
+    fw.close()
+
     
     ####################### LOW RES ANNOTATION #######################
-    print (len(label))
+    print ('Total labels in regular annotation: ',len(label))
     minutes = 15
     seconds = 0
 
@@ -364,14 +366,13 @@ def main():
             minutes -= 1
         else:
             seconds -= 1
-        #if index > 10:
-        #    break
         #print ('Mission time is : ',minutes,':',seconds)
 
-    print ('Total labels: ',l_count)
+    print ('Total labels in one second annotation: ',l_count)
     # Write sequences to a file.
-    out_file = os.path.join(out_dir,team+'_'+P1.pid+'_'+P1.name+'.seq')
-    print (out_file)
+    out_fname = team+'_'+trial_num+'_'+P1.pid+'_'+P1.name+'_1s.seq'
+    out_file = os.path.join(out_dir,out_fname)
+    print (out_fname)
     fw = open(out_file,'w')
     for v in lab_sec.values():
         # v is a list of labels.

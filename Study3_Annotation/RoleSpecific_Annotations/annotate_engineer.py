@@ -1,13 +1,18 @@
 """
-Script: annotate_medic.py
+Script: annotate_engineer.py
 Author: Chinmaib
 
 Description: Parsing messages from the Minecraft messages bus which are in JSON format and
-annotating basic set of actions performed by the medic in the Minecraft SAR mission.
+annotating basic set of actions performed by the engineer in the Minecraft SAR mission.
 """
 import sys
 # Adding parent folder to import search.
-sys.path.append("..")
+sys.path.append("..") 
+
+# As a command line argument we should pass, team and trial
+if (len(sys.argv) < 2):
+    print ('Usage: python3 annotate_medic.py <TM000XXX> <Trial000XXX>')
+    exit(0)
 
 from typing import Any, Dict, List, Set, TextIO
 import os
@@ -28,13 +33,16 @@ from utils import *
 # Declare location of files and folders.
 data_dir="/home/chinmai/src/ASIST/Study3/"
 out_dir ="/home/chinmai/src/ASIST/Scripts/Study3_Annotation/Output"
-team="TM000093"
-#meta_file="Trial-T000451_Team-TM000075.metadata" 
 
-meta_file='Trial-T000486_Team-TM000093.metadata'
+#team="TM000093"
+team  = sys.argv[1]
+trial = sys.argv[2]
+#meta_file="Trial-T000451_Team-TM000075.metadata" 
 
 def main():
     # Open metadata file for reading.
+    global data_dir, out_dir, team, trial
+    meta_file = 'Trial-'+trial+'_Team-'+team+'.metadata'
     meta_file_path = os.path.join(data_dir,team,meta_file)
     meta_fd = open(meta_file_path,'r')
 
@@ -87,9 +95,6 @@ def main():
         messages, key=lambda x: parse(x["header"]["timestamp"])
     )
 
-    playerIdToColor = {}
-    metadata = {}
-
     # Close meta file.
     meta_fd.close()
 
@@ -97,15 +102,18 @@ def main():
     # Player names, ID's, and matching colors.
     msg = trialMessage[0]
     # Client info field is a list of dictionary item with player information
+    trial_name = msg["data"]["name"]
+    trial_num  = msg["data"]["trial_number"]
     sub_info = msg["data"]["client_info"]
-    # Player class is defined in sample_class
-    P1 = Player(sub_info[0]["playername"],sub_info[0]["participant_id"], \
-            sub_info[0]["callsign"])
-    P2 = Player(sub_info[1]["playername"],sub_info[1]["participant_id"], \
-            sub_info[1]["callsign"])
-    P3 = Player(sub_info[2]["playername"],sub_info[2]["participant_id"], \
-            sub_info[2]["callsign"])
-    # P1 is Red
+
+    # Client info is a list of player information.
+    for i in range(0,3):        #3 players
+        if sub_info[i]["callsign"] == "Blue":
+            PL = Player(sub_info[i]["playername"],sub_info[i]["participant_id"], \
+                sub_info[i]["callsign"])
+            break
+
+    # PL is Blue - Engineer
     # Define a counter.
     C = Counter()
     
@@ -114,8 +122,6 @@ def main():
     hallways = []
     treatmentAreas = []
     # PARSE MAP into rooms, hallways, and corridors.
-    # NOTE: For older versions, extract bounding boxes and using player coordinates,
-    # we will infer where they are in the MAP.
     # Rooms and areas are listed as list of places in the MAP JSON object.
     for location in groundTruthMessagesMap["map"]["data"]["semantic_map"]["locations"]:
     # List all location names and ID's separated by comma
@@ -130,7 +136,6 @@ def main():
                 treatmentAreas.append(location["id"])
                 #treatmentAreas.append((location["id"],location["name"]))
             #print(location["name"],',',location["id"],',',location["type"])
-    #NOTE: staging area to be placed under hallways and not rooms.
     #################### EXTRACT START STOP TIMES ##########################
 
     # Mission start time
@@ -158,22 +163,10 @@ def main():
 
     # Round off Start time
     mission_start_time = parse(missionStart)
-    # Rounding off the start time to the nearest microsecond.
-    start_microsec = mission_start_time.microsecond
-    delta = start_microsec%100000
-    mission_start_round = mission_start_time - datetime.timedelta(microseconds=delta)
 
     # Round off Stop time to next millisecond.
     mission_stop_time = parse(missionStop)
-    # Rounding off the start time to the nearest microsecond.
-    stop_microsec = mission_stop_time.microsecond
-    delta = 100000-(stop_microsec%100000)
-    mission_stop_round = mission_stop_time + datetime.timedelta(microseconds=delta)
 
-    t1 = mission_start_round
-    t2 = t1 + datetime.timedelta(seconds=1)
-
-    
     #################### EXTRACT PLAYER  MESSAGES ##########################
     #NOTE: Use a for loop here, for 3 players in player list.
     p1_msgs = []
@@ -186,7 +179,7 @@ def main():
 
         #if message["data"].has_key("participant_id"):
         if "participant_id" in message["data"]:
-            if (message["data"]["participant_id"] == P1.pid):
+            if (message["data"]["participant_id"] == PL.pid):
                 C.count1 += 1
                 p1_msgs.append(message)
                 #print ('Time :',message_time,'\t',message["data"]["mission_timer"],'\t', \
@@ -201,12 +194,15 @@ def main():
     # FLAGS to check before generating sequence.
     # These flags can be added to the player object.
     player_loc  = "hallway"
-    triage      = "inactive"
     transport   = "inactive"
     label = []
     label_class = []
-    for msg in p1_msgs:
 
+    for msg in p1_msgs:
+ 
+        # Extract mission time.
+        (mm,ss) = parse_mission_time(msg["data"]["mission_timer"])
+         
         # UPDATE player location.
         # Location message only updates player location. NO LABEL.
         if (msg["topic"] == "observations/events/player/location"):
@@ -217,20 +213,6 @@ def main():
                     player_loc = "hallway"
                 elif  msg["data"]["locations"][0]["id"] in treatmentAreas:
                     player_loc = "treatment"
-            continue
-
-        # Update player state.
-        # Triage - ACTION
-        if msg["topic"].lower() == "observations/events/player/triage":
-            if triage == 'active':
-                if msg["data"]["triage_state"] == "SUCCESSFUL":
-                    triage = 'inactive'
-                elif msg["data"]["triage_state"] == "UNSUCCESSFUL":
-                    triage = 'inactive'
-            else:
-                if msg["data"]["triage_state"] == "IN_PROGRESS":
-                    triage = "active"
-                    #print ('Triage Active at time',msg["data"]["mission_timer"])
             continue
 
         # Update if player is transporting victim or not.
@@ -251,8 +233,6 @@ def main():
             else:
                 transport = "inactive"
             continue
-        # Extract mission time.
-        (mm,ss) = parse_mission_time(msg["data"]["mission_timer"])
 
         # LABEL - State
         # Observations state indicates us about the players position and velocity
@@ -260,25 +240,13 @@ def main():
             # Player is stationary
             if msg["data"]["motion_x"] == 0 and msg["data"]["motion_z"] == 0:
                 # Is the player performing a ROLE specific action
-                if (triage == "active"):
-                    #label.append(('RA',msg["data"]["mission_timer"]))
-                    label.append(('RA',mm,ss))
-                    label_class.append(8)
-                    continue
-                else:   # Player not doing anything
-                    label.append(('ST',mm,ss))
-                    label_class.append(0)
-                    continue
+                label.append(('ST',mm,ss))
+                label_class.append(0)
+                continue
                 #print ("ST,0,",msg["data"]["mission_timer"])
 
             # Player is moving
             else:  
-                
-                if (triage == "active"):
-                    label.append(('RA',mm,ss))
-                    label_class.append(8)
-                    continue
-                # Check if player is moving a victim
                 if transport == "active":
                     label.append(('TV',mm,ss))
                     label_class.append(4)
@@ -296,7 +264,15 @@ def main():
 
                     #print ("SR,2,",msg["data"]["mission_timer"])
                     # There is a location called UNKOWN, we will ignore for now.
-        
+
+        # Rubble destroyed - LABEL
+        if (msg["topic"].lower() == "observations/events/player/rubble_destroyed"):
+            label.append(('RA',mm,ss))
+            label_class.append(8)
+            continue
+            print ('Rubble destroyed at :',msg["data"]["mission_timer"])
+            # Open door label is 3
+
         # Door - LABEL
         if (msg["topic"].lower() == "observations/events/player/door"):
             if msg["data"]["open"] == True:
@@ -331,6 +307,15 @@ def main():
 
     # Coming here mean label sequence has been generated.
     # Label list contains label(str), mission(mm), and seconds(ss).
+    
+    # Write sequences to a file.
+    out_fname = team+'_'+trial_num+'_'+PL.pid+'_'+PL.name+'.seq'
+    out_file = os.path.join(out_dir,out_fname)
+    print (out_fname)
+    fw = open(out_file,'w')
+    for lab in label:
+        fw.write(lab[0]+'\n')
+    fw.close()
     
     ####################### LOW RES ANNOTATION #######################
     print (len(label))
@@ -370,14 +355,16 @@ def main():
 
     print ('Total labels: ',l_count)
     # Write sequences to a file.
-    out_file = os.path.join(out_dir,team+'_'+P1.pid+'_'+P1.name+'.seq')
-    print (out_file)
+    out_fname = team+'_'+trial_num+'_'+PL.pid+'_'+PL.name+'_1s.seq'
+    out_file  = os.path.join(out_dir,out_fname)
+    print (out_fname)
     fw = open(out_file,'w')
     for v in lab_sec.values():
         # v is a list of labels.
         for symbol in v:
             fw.write(symbol+'\n')
     fw.close()
+    
 def parse_mission_time (mission_time):
     temp = mission_time.split(':')
     return int(temp[0]),int(temp[1])
