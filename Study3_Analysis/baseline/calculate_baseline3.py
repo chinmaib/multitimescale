@@ -41,7 +41,6 @@ def main():
     mat = np.loadtxt(csv_file_path, dtype=int, delimiter=',')
     n,cols = (mat.shape)
 
-
     acc_list = []
 
     # Need to calculate the most probable label
