@@ -3,7 +3,7 @@ Script: annotate_study3.py
 Author: Chinmaib
 Description: Parsing messages from the Minecraft messages bus which are in JSON format.
 """
-
+import socket
 from typing import Any, Dict, List, Set, TextIO
 import os
 import json
@@ -21,8 +21,12 @@ import matplotlib.pyplot as plt
 from utils import *
 
 # Declare location of files and folders.
-data_dir="/home/chinmai/src/ASIST/Scripts/JSON_Parser"
-team="TM000093"
+if socket.gethostname() == 'kraken':
+    data_dir="/home/chinmaib/tomcat/study3_data"
+else:
+    data_dir="/home/chinmai/src/ASIST/Scripts/JSON_Parser"
+
+#team="TM000093"
 #meta_file="Trial-T000451_Team-TM000075.metadata" 
 
 meta_file='Trial-T000486_Team-TM000093.metadata'

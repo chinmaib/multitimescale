@@ -6,12 +6,14 @@ Description: Parsing messages from the Minecraft messages bus which are in JSON 
 annotating basic set of actions performed by the medic in the Minecraft SAR mission.
 """
 import sys
+import socket
+import re
 # Adding parent folder to import search.
 sys.path.append("..")
 
 # As a command line argument we should pass, team and trial
-if (len(sys.argv) < 3):
-    print ('Usage: python3 annotate_medic.py <TM000XXX> <Trial000XXX>')
+if (len(sys.argv) < 2):
+    print ('Usage: python3 annotate_medic.py <metadata filename>')
     exit(0)
 
 from typing import Any, Dict, List, Set, TextIO
@@ -27,25 +29,35 @@ from Common.Player import*
 from utils import *
 
 # Declare location of files and folders.
-#data_dir="/home/chinmai/src/ASIST/Study3/"
-data_dir ="/home/chinmaib/tomcat/HSR_noadvisor"
-#out_dir ="/home/chinmai/src/ASIST/Scripts/Study3_Annotation/Output"
-out_dir  ="/home/chinmaib/tomcat/annotations"
 
-#team="TM000093"
-team  = sys.argv[1]
-trial = sys.argv[2]
-#meta_file="Trial-T000451_Team-TM000075.metadata" 
+if socket.gethostname() == 'kraken':
+    data_dir ="/home/chinmaib/tomcat/study3_data"
+    out_dir  ="/home/chinmaib/tomcat/annotations"
+else:
+    data_dir="/home/chinmai/src/ASIST/Study3/"
+    out_dir ="/home/chinmai/src/ASIST/Scripts/Study3_Annotation/Output"
 
 def main():
     # Open metadata file for reading.
-    global data_dir, out_dir, team, trial
-    meta_file = 'HSRData_TrialMessages_Trial-'+trial+'_Team-'+team+ \
-            '_Member-na_CondBtwn-none_CondWin-na_Vers-5.metadata'
+    global data_dir, out_dir
+
+    #meta_file = 'HSRData_TrialMessages_Trial-'+trial+'_Team-'+team+ \
+    #        '_Member-na_CondBtwn-none_CondWin-na_Vers-5.metadata'
+    meta_file = sys.argv[1]
+
     #meta_file_path = os.path.join(data_dir,team,meta_file)
     meta_file_path = os.path.join(data_dir,meta_file)
     meta_fd = open(meta_file_path,'r')
+    
+    trial_re = re.compile('[T][0-9][0-9][0-9][0-9][0-9][0-9]')
+    team_re = re.compile('[T][M][0-9][0-9][0-9][0-9][0-9][0-9]')
+    
+    trial = trial_re.search(meta_file).group()
+    team = team_re.search(meta_file).group()
 
+    #print(trial.group(),team.group())
+    #print(trial,team)
+    
     #################### PARSE METADATA JSON OBJECTS ##########################
     # Create an empty list to add multiple JSON objects in one line
     messages = []
@@ -333,7 +345,7 @@ def main():
     # Coming here mean label sequence has been generated.
     # Label list contains label(str), mission(mm), and seconds(ss).
     # Write sequences to a file.
-    out_fname = team+'_'+trial_num+'_'+P1.pid+'_'+P1.name+'.seq'
+    out_fname = team+'_'+trial+'_'+P1.pid+'_'+P1.name+'.seq'
     out_file = os.path.join(out_dir,out_fname)
     print (out_fname)
     fw = open(out_file,'w')

@@ -19,7 +19,7 @@ if len(sys.argv) != 2:
 
 def main():
     meta_fname  = sys.argv[1]
-    data_dir    = '/home/chinmaib/tomcat/HSR_noadvisor'
+    data_dir    = '/home/chinmaib/tomcat/study3_data'
     meta_file_path = os.path.join(data_dir,meta_fname)
     meta_fd = open(meta_file_path,'r')
     
